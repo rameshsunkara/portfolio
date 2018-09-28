@@ -79,7 +79,7 @@ const Footer = () => (
           ))}
       </SocialItemList>
     </SocialContainer>
-    <Copy>Inspired from</Copy>
+    <Copy>Inspired by</Copy>
     <GithubLink
       href="https://github.com/bchiang7/v4"
       target="_blank"

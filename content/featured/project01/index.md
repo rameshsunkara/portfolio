@@ -11,7 +11,6 @@ tech:
   - JS
   - Spring-Boot
   - Docker
-  - Gradle
 ---
 
 InfoSight is a modern webapp comprised of independent MicroFrontends & MicroServices to show AI driven predictive analytics.
