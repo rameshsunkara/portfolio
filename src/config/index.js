@@ -1,40 +1,35 @@
 module.exports = {
-  siteTitle: 'Brittany Chiang | Software Engineer',
-  siteDescription:
-    'Design-minded software engineer based in Boston, MA who specializes in developing (and occasionally designing) beautiful, high-quality websites and applications.',
+  siteTitle: 'Ramesh Sunkara | Full Stack Developer',
+  siteDescription: 'Full Stack Developer based in Raleigh, NC',
   siteKeywords:
-    'Brittany Chiang, Brittany, Chiang, bchiang7, software engineer, front-end engineer, web developer, javascript, northeastern',
-  siteUrl: 'https://brittanychiang.com',
+    'Ramesh Sunkara, Ramesh, Sunkara, rsunkara, Full Stack Developer, software developer, javascript',
+  siteUrl: 'https://rameshsunkara.com',
   siteLanguage: 'en_US',
   siteImage: '../static/og.png', // 1280px x 800px
   siteIcon: '../static/logo.png',
 
-  googleVerification: 'DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk',
+  googleVerification: '',
 
   avatar: '/logos/social.png',
-  name: 'Brittany Chiang',
-  location: 'Boston, MA',
-  email: 'brittany.chiang@gmail.com',
+  name: 'Ramesh Sunkara',
+  location: 'Raleigh, NC',
+  email: 'svknmrr@gmail.com',
   socialMedia: [
     {
       name: 'Github',
-      url: 'https://github.com/bchiang7/',
+      url: 'https://github.com/rameshsunkara/',
     },
     {
       name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/bchiang7/',
-    },
-    {
-      name: 'Codepen',
-      url: 'https://codepen.io/bchiang7/',
+      url: 'https://www.linkedin.com/in/ramesh-sunkara/',
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/bchiang7/',
+      url: 'https://www.instagram.com/viewfyndr/',
     },
     {
       name: 'Twitter',
-      url: 'https://twitter.com/bchiang7',
+      url: 'https://twitter.com/rameshtalks',
     },
   ],
 
@@ -57,8 +52,8 @@ module.exports = {
     },
   ],
 
-  twitterHandle: '@bchiang7',
-  googleAnalyticsID: 'UA-45666519-2',
+  twitterHandle: '@rameshtalks',
+  googleAnalyticsID: 'UA-126621624-1',
 
   headerHeight: 100,
 

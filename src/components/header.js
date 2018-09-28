@@ -145,12 +145,6 @@ const NavListItem = styled.li`
   position: relative;
   font-size: ${theme.fontSizes.smallish};
   counter-increment: item 1;
-  &:before {
-    content: '0' counter(item) '.';
-    text-align: right;
-    color: ${theme.colors.green};
-    font-size: ${theme.fontSizes.xsmall};
-  }
 `;
 const NavLink = styled(AnchorLink)`
   ${mixins.link};

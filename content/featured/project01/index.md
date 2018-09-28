@@ -1,15 +1,17 @@
 ---
-date: '2018-04-01'
-title: 'blistabloc'
-cover: './blistabloc.png'
+date: '2018-10-01'
+title: 'InfoSight'
+cover: './infosight.png'
 github: ''
-external: 'https://blistabloc.com/'
+external: 'https://infosight.hpe.com/'
 tech:
-  - Wordpress
-  - Timber
+  - ReactJS
+  - Redux
   - SCSS
   - JS
-  - PHP
+  - Spring-Boot
+  - Docker
+  - Gradle
 ---
 
-Custom wordpress theme built with Timber and WooCommerce for blistabloc, a start-up selling the only reactive shoe insert that prevents blisters from forming.
+InfoSight is a modern webapp comprised of independent MicroFrontends & MicroServices to show AI driven predictive analytics.

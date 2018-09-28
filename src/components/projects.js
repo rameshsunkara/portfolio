@@ -222,9 +222,11 @@ class Projects extends Component {
           </TransitionGroup>
         </ProjectsGrid>
 
-        <ShowMoreButton onClick={this.showMoreToggle}>
-          {showMore ? 'Fewer' : 'More'} Projects
-        </ShowMoreButton>
+        {false && (
+          <ShowMoreButton onClick={this.showMoreToggle}>
+            {showMore ? 'Fewer' : 'More'} Projects
+          </ShowMoreButton>
+        )}
       </ProjectsContainer>
     );
   }
