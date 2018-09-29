@@ -3,7 +3,7 @@ module.exports = {
   siteDescription: 'Full Stack Developer based in Raleigh, NC',
   siteKeywords:
     'Ramesh Sunkara, Ramesh, Sunkara, rsunkara, Full Stack Developer, software developer, javascript',
-  siteUrl: 'https://rameshsunkara.com',
+  siteUrl: 'https://rsunkara.com',
   siteLanguage: 'en_US',
   siteImage: '../static/og.png', // 1280px x 800px
   siteIcon: '../static/logo.png',
