@@ -3,7 +3,7 @@ date: '2016-10-10'
 title: 'Principal Full Stack Developer'
 company: 'HPE Nimble Storage'
 location: 'Raleigh-Durham, NC'
-range: 'OCt 2016 - Present'
+range: 'Oct 2016 - Present'
 url: 'https://www.hpe.com/nimblestorage'
 ---
 
