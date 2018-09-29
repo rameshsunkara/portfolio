@@ -3,7 +3,7 @@ date: '2009-12-01'
 title: 'Software Engineer'
 company: 'HP'
 location: 'Bangalore, India'
-range: 'December 2009 - Dec 2010'
+range: 'Dec 2009 - Dec 2010'
 url: 'https://www.hp.com/'
 ---
 

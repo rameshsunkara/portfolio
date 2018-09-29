@@ -8,7 +8,7 @@ skills:
   - Redux
   - Java
   - Spring-Boot
-  - RESTful Webservices
+  - RESTful
   - Scrum Master
 ---
 
