@@ -34,6 +34,7 @@ const theme = {
   },
 
   fontSizes: {
+    xxsmall: '10px',
     xsmall: '12px',
     smallish: '13px',
     small: '14px',

@@ -41,9 +41,10 @@ const Copy = styled(P)`
 `;
 const GithubLink = styled(A)`
   ${mixins.inlineLink};
+  padding-left: 3px;
   color: ${theme.colors.lightGrey};
   font-family: ${theme.fonts.SFMono};
-  font-size: ${theme.fontSizes.xsmall};
+  font-size: ${theme.fontSizes.xxsmall};
   &:after {
     display: none;
   }
@@ -79,13 +80,15 @@ const Footer = () => (
           ))}
       </SocialItemList>
     </SocialContainer>
-    <Copy>Built from a fork</Copy>
-    <GithubLink
-      href="https://github.com/rameshsunkara/portfolio"
-      target="_blank"
-      rel="nofollow noopener noreferrer">
-      Source
-    </GithubLink>
+    <Copy>
+      Built using this
+      <GithubLink
+        href="https://github.com/rameshsunkara/portfolio"
+        target="_blank"
+        rel="nofollow noopener noreferrer">
+        fork
+      </GithubLink>
+    </Copy>
   </FooterContainer>
 );
 
