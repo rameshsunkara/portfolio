@@ -15,7 +15,6 @@ import { mixins, Main } from '../style';
 
 const MainContainer = styled(Main)`
   ${mixins.sidePadding};
-  counter-reset: section;
 `;
 
 const IndexPage = ({ data, location }) => (

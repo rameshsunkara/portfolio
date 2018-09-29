@@ -41,7 +41,6 @@ const Navbar = styled(Nav)`
   font-family: ${theme.fonts.SFMono};
   width: 100%;
   color: ${theme.colors.lightestSlate};
-  counter-reset: item 0;
   position: relative;
   z-index: 12;
 `;
@@ -144,7 +143,6 @@ const NavListItem = styled.li`
   margin: 0 10px;
   position: relative;
   font-size: ${theme.fontSizes.smallish};
-  counter-increment: item 1;
 `;
 const NavLink = styled(AnchorLink)`
   ${mixins.link};

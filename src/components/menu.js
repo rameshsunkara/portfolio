@@ -49,7 +49,6 @@ const NavListItem = styled.li`
   margin: 0 auto 20px;
   position: relative;
   font-size: ${theme.fontSizes.large};
-  counter-increment: item 1;
   ${media.thone`
     margin: 0 auto 10px;
     font-size: ${theme.fontSizes.medium};
@@ -57,13 +56,6 @@ const NavListItem = styled.li`
   ${media.tiny`
     font-size: ${theme.fontSizes.smallish};
   `};
-  &:before {
-    display: block;
-    content: '0' counter(item) '.';
-    color: ${theme.colors.green};
-    font-size: ${theme.fontSizes.small};
-    margin-bottom: 5px;
-  }
 `;
 const NavLink = styled(AnchorLink)`
   ${mixins.link};
