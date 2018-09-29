@@ -7,9 +7,9 @@ skills:
   - React
   - Redux
   - Java
-  - Spring Boot
-  - RestFul Webservices
-  - Scrum Mastering
+  - Spring-Boot
+  - RESTful Webservices
+  - Scrum Master
 ---
 
 I am a Full Stack Developer with over 9 years of experience in building software applications to solve complex problems lucidly.

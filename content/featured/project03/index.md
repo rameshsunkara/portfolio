@@ -10,4 +10,4 @@ tech:
   - JavaScript
 ---
 
-Web application to apply for admission in ULL
+Online Admission portal for University Of Louisiana at Lafayette.

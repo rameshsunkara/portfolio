@@ -12,7 +12,7 @@ const SocialContainer = styled.div`
   width: 40px;
   position: fixed;
   bottom: 0;
-  left: 40px;
+  right: 40px;
   color: ${theme.colors.lightSlate};
   ${media.desktop`left: 25px;`};
   ${media.tablet`display: none;`};

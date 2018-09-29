@@ -11,4 +11,4 @@ tech:
 show: 'true'
 ---
 
-Online version of my 2016 resume made for fun. While learning React.js I made this for practice.
+While learning React.js I made this resume for fun.

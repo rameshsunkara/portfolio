@@ -52,7 +52,10 @@ const Blurb = styled.div`
     ${mixins.inlineLink};
   }
 `;
-const EmailButton = styled.div``;
+const EmailButton = styled.div`
+  display: none;
+`;
+
 const EmailLink = styled(A)`
   ${mixins.bigButton};
   font-size: ${theme.fontSizes.smallish};

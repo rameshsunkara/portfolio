@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { theme, media, A } from '../style';
 
 const EmailContainer = styled.div`
+  display: none;
   width: 40px;
   position: fixed;
   bottom: 0;

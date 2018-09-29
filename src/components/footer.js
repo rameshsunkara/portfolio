@@ -15,6 +15,7 @@ const FooterContainer = styled.footer`
   color: ${theme.colors.slate};
   text-align: center;
   height: auto;
+  display: none;
 `;
 const SocialContainer = styled.div`
   color: ${theme.colors.lightSlate};
