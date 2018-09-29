@@ -10,11 +10,12 @@ import { theme, mixins, media, A, P, Ul } from '../style';
 const FooterContainer = styled.footer`
   ${mixins.flexCenter};
   flex-direction: column;
-  padding: 15px;
+  padding: 8px;
   background-color: ${theme.colors.darkNavy};
   color: ${theme.colors.slate};
   text-align: center;
   height: auto;
+  display: none;
 `;
 const SocialContainer = styled.div`
   color: ${theme.colors.lightSlate};
@@ -37,13 +38,14 @@ const SocialLink = styled(A)`
 `;
 const Copy = styled(P)`
   margin: 5px 0 3px;
-  font-size: ${theme.fontSizes.medium};
+  font-size: ${theme.fontSizes.xsmall};
 `;
 const GithubLink = styled(A)`
   ${mixins.inlineLink};
+  padding-left: 3px;
   color: ${theme.colors.lightGrey};
   font-family: ${theme.fonts.SFMono};
-  font-size: ${theme.fontSizes.xsmall};
+  font-size: ${theme.fontSizes.xxsmall};
   &:after {
     display: none;
   }
@@ -79,13 +81,15 @@ const Footer = () => (
           ))}
       </SocialItemList>
     </SocialContainer>
-    <Copy>Designed &amp; Built by Brittany Chiang</Copy>
-    <GithubLink
-      href="https://github.com/bchiang7/v4"
-      target="_blank"
-      rel="nofollow noopener noreferrer">
-      View Source
-    </GithubLink>
+    <Copy>
+      Built using this
+      <GithubLink
+        href="https://github.com/rameshsunkara/portfolio"
+        target="_blank"
+        rel="nofollow noopener noreferrer">
+        fork
+      </GithubLink>
+    </Copy>
   </FooterContainer>
 );
 

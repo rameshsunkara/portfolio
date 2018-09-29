@@ -1,15 +1,14 @@
 ---
-date: '2018-01-01'
-title: 'Halcyon Theme'
-cover: './halcyon.png'
-github: 'https://github.com/bchiang7/halcyon-vscode'
-external: 'https://bchiang7.github.io/halcyon-site/'
+date: '2014-06-09'
+title: 'MicroStrategy Desktop'
+cover: './mstrdesktop2.png'
+github: ''
+external: 'https://www.microstrategy.com/us/get-started/desktop'
 tech:
-  - VS Code
-  - Sublime Text
-  - Atom
-  - iTerm2
-  - Hyper
+  - HTML5
+  - JavaScript
+  - Java
+  - mojo
 ---
 
-A minimal, dark theme for VS Code, Sublime Text, Atom, iTerm, and more published to [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=brittanychiang.halcyon-vscode), [Package Control](https://packagecontrol.io/packages/Halcyon%20Theme), [Atom Package Manager](https://atom.io/themes/halcyon-syntax), and [npm](https://www.npmjs.com/package/hyper-halcyon-theme). Halcyon Theme for VS Code has almost 17,000 downloads.
+MicroStrategy’s flagship desktop product for data visualization built in HTML5.

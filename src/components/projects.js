@@ -150,7 +150,7 @@ class Projects extends Component {
 
     return (
       <ProjectsContainer>
-        <ProjectsTitle innerRef={el => (this.projects = el)}>Other Projects</ProjectsTitle>
+        <ProjectsTitle innerRef={el => (this.projects = el)}>Outside of Work</ProjectsTitle>
         <ProjectsGrid>
           <TransitionGroup className="projects">
             {projectsToShow &&
@@ -222,9 +222,11 @@ class Projects extends Component {
           </TransitionGroup>
         </ProjectsGrid>
 
-        <ShowMoreButton onClick={this.showMoreToggle}>
-          {showMore ? 'Fewer' : 'More'} Projects
-        </ShowMoreButton>
+        {false && (
+          <ShowMoreButton onClick={this.showMoreToggle}>
+            {showMore ? 'Fewer' : 'More'} Projects
+          </ShowMoreButton>
+        )}
       </ProjectsContainer>
     );
   }

@@ -36,7 +36,7 @@ const Name = styled.h2`
   ${media.phone`font-size: 40px;`};
 `;
 const Subtitle = styled.h3`
-  font-size: 80px;
+  font-size: 30px;
   line-height: 1.1;
   color: ${theme.colors.slate};
   ${media.desktop`font-size: 70px;`};
@@ -52,7 +52,10 @@ const Blurb = styled.div`
     ${mixins.inlineLink};
   }
 `;
-const EmailButton = styled.div``;
+const EmailButton = styled.div`
+  display: none;
+`;
+
 const EmailLink = styled(A)`
   ${mixins.bigButton};
   font-size: ${theme.fontSizes.smallish};

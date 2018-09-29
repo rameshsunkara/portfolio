@@ -3,19 +3,20 @@ title: 'About Me'
 avatar: './me.jpg'
 skills:
   - JavaScript
-  - TypeScript
   - HTML & CSS
   - React
-  - Ember
-  - Gatsby
-  - Jekyll
-  - Craft
-  - Wordpress
-  - Timber
+  - Redux
+  - Java
+  - Spring-Boot
+  - RESTful Webservices
+  - Scrum Master
 ---
 
-Hey there! I'm a software engineer who enjoys working at the intersection of engineering and design. I build excellent websites and apps that provide intuitive, pixel-perfect user interfaces, while also being scalable and efficient behind the scenes.
+I am a Full Stack Developer with over 9 years of experience in building software applications to solve complex problems lucidly.
 
-For the past 5+ years, I've been honing my skills in web development &mdash; building websites, web apps, working in the industry, and constantly learning in this ever-changing field!
+I strongly believe in minimalistic solutions which are scalable. I am passionate about design and architecture of the systems which are enormously scalable, reactive and most importantly usable.
 
-Here's a few things I'm experienced with:
+Being a constant learner, I love prototyping.
+I have a strong niche for Product Management and of course I enjoy teamwork.
+
+Undeprecated skills:
