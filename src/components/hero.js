@@ -39,10 +39,10 @@ const Subtitle = styled.h3`
   font-size: 30px;
   line-height: 1.1;
   color: ${theme.colors.slate};
-  ${media.desktop`font-size: 70px;`};
-  ${media.tablet`font-size: 60px;`};
-  ${media.phablet`font-size: 50px;`};
-  ${media.phone`font-size: 40px;`};
+  ${media.desktop`font-size: 30px;`};
+  ${media.tablet`font-size: 20px;`};
+  ${media.phablet`font-size: 25px;`};
+  ${media.phone`font-size: 18px;`};
 `;
 const Blurb = styled.div`
   margin-top: 25px;
