@@ -12,19 +12,6 @@ const H3 = styled.h3`
   font-size: ${theme.fontSizes.h3};
   ${media.tablet`font-size: 24px;`};
 
-  &:before {
-    counter-increment: section;
-    content: '0' counter(section) '.';
-    margin-right: 10px;
-    font-family: ${theme.fonts.SFMono};
-    font-weight: normal;
-    color: ${theme.colors.green};
-    font-size: ${theme.fontSizes.xlarge};
-    position: relative;
-    bottom: 4px;
-    ${media.tablet`font-size: ${theme.fontSizes.large};`};
-  }
-
   &:after {
     content: '';
     display: block;

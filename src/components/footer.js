@@ -10,7 +10,7 @@ import { theme, mixins, media, A, P, Ul } from '../style';
 const FooterContainer = styled.footer`
   ${mixins.flexCenter};
   flex-direction: column;
-  padding: 15px;
+  padding: 8px;
   background-color: ${theme.colors.darkNavy};
   color: ${theme.colors.slate};
   text-align: center;
@@ -37,7 +37,7 @@ const SocialLink = styled(A)`
 `;
 const Copy = styled(P)`
   margin: 5px 0 3px;
-  font-size: ${theme.fontSizes.medium};
+  font-size: ${theme.fontSizes.xsmall};
 `;
 const GithubLink = styled(A)`
   ${mixins.inlineLink};
@@ -79,12 +79,12 @@ const Footer = () => (
           ))}
       </SocialItemList>
     </SocialContainer>
-    <Copy>Inspired by</Copy>
+    <Copy>Built from a fork</Copy>
     <GithubLink
-      href="https://github.com/bchiang7/v4"
+      href="https://github.com/rameshsunkara/portfolio"
       target="_blank"
       rel="nofollow noopener noreferrer">
-      this
+      Source
     </GithubLink>
   </FooterContainer>
 );
