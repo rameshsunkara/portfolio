@@ -45,7 +45,7 @@ const Subtitle = styled.h3`
   ${media.phone`font-size: 18px;`};
 `;
 const Blurb = styled.div`
-  margin-top: 25px;
+  margin-top: 50px;
   width: 50%;
   max-width: 500px;
   a {
