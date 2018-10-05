@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 
-import config from '../config';
+import { srConfig } from '../config';
 
 import { IconGithub, IconExternal } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Section, H3, Ul, A } from '../style';
+import { theme, mixins, media, Section, H3, Ul, A } from '../styles';
 
 import ScrollReveal from 'scrollreveal';
 
@@ -209,8 +209,8 @@ class Featured extends Component {
   }
 
   componentDidMount() {
-    ScrollReveal().reveal(this.featured, config.srConfig());
-    this.revealRefs.forEach(ref => ScrollReveal().reveal(ref, config.srConfig()));
+    ScrollReveal().reveal(this.featured, srConfig());
+    this.revealRefs.forEach(ref => ScrollReveal().reveal(ref, srConfig()));
   }
 
   render() {

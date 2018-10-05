@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 import anime from 'animejs';
 
 import styled from 'styled-components';
-import { theme, mixins } from '../style';
+import { theme, mixins } from '../styles';
 
 const LoaderContainer = styled.div`
   ${mixins.flexCenter};
@@ -22,7 +23,7 @@ const LogoWrapper = styled.div`
   width: max-content;
   max-width: 100px;
   transition: ${theme.transition};
-  opacity: ${props => (props.show ? 1 : 0)};
+  opacity: ${props => (props.isMounted ? 1 : 0)};
   svg {
     width: 100%;
     height: 100%;
@@ -42,22 +43,20 @@ class Loader extends Component {
   };
 
   state = {
-    show: false,
+    isMounted: false,
   };
 
   componentDidMount() {
-    this.setState({ show: true }, () => {
-      document.body.style.overflow = 'hidden';
-      this.animate();
-    });
+    this.setState({ isMounted: true }, () => this.animate());
+  }
+
+  componentWillUnmount() {
+    this.setState({ isMounted: false });
   }
 
   animate() {
     const loader = anime.timeline({
-      complete: () => {
-        document.body.style.overflow = 'auto';
-        this.props.finishLoading();
-      },
+      complete: () => this.props.finishLoading(),
     });
 
     loader
@@ -92,11 +91,14 @@ class Loader extends Component {
   }
 
   render() {
-    const { show } = this.state;
+    const { isMounted } = this.state;
 
     return (
       <LoaderContainer className="loader">
-        <LogoWrapper show={show}>
+        <Helmet>
+          <body className={isMounted ? 'hidden' : ''} />
+        </Helmet>
+        <LogoWrapper isMounted={isMounted}>
           <svg id="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             <title>Loader Logo</title>
             <g>

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import config from '../config';
+import { nav } from '../config';
 
 import Head from '../components/head';
 import Loader from '../components/loader';
@@ -11,7 +12,8 @@ import Email from '../components/email';
 import Footer from '../components/footer';
 
 import styled from 'styled-components';
-import { theme, A } from '../style';
+import '../styles/base';
+import { theme, A } from '../styles';
 
 const SkipToContent = styled(A)`
   position: absolute;
@@ -61,28 +63,40 @@ class Layout extends Component {
   render() {
     const { children, location } = this.props;
     const { isLoading } = this.state;
-    const navLinks = config.navLinks;
 
     return (
-      <div id="root">
-        <Head />
+      <StaticQuery
+        query={graphql`
+          query LayoutQuery {
+            site {
+              siteMetadata {
+                title
+                siteUrl
+                description
+              }
+            }
+          }
+        `}
+        render={data => (
+          <div id="root">
+            <Head metaData={data.site.siteMetadata} />
 
-        <SkipToContent href="#content" className="skip-to-content">
-          Skip To Content
-        </SkipToContent>
+            <SkipToContent href="#content">Skip To Content</SkipToContent>
 
-        {isLoading ? (
-          <Loader finishLoading={this.finishLoading} />
-        ) : (
-          <div className="container">
-            <Header location={location} navLinks={navLinks} />
-            <Social />
-            <Email />
-            {children}
-            <Footer />
+            {isLoading ? (
+              <Loader finishLoading={this.finishLoading} />
+            ) : (
+              <div className="container">
+                <Header location={location} navLinks={nav} />
+                <Social />
+                <Email />
+                {children}
+                <Footer />
+              </div>
+            )}
           </div>
         )}
-      </div>
+      />
     );
   }
 }
