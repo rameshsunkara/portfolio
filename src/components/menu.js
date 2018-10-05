@@ -5,7 +5,7 @@ import AnchorLink from 'react-anchor-link-smooth-scroll';
 import resume from '../../static/resume.pdf';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Nav, Ol, A } from '../style';
+import { theme, mixins, media, Nav, Ol, A } from '../styles';
 
 const MenuContainer = styled.div`
   position: fixed;
@@ -15,6 +15,7 @@ const MenuContainer = styled.div`
   width: 100%;
   height: 100vh;
   z-index: 10;
+  outline: 0;
   transition: ${theme.transition};
   transform: translateX(${props => (props.menuOpen ? 0 : 100)}vw);
   visibility: ${props => (props.menuOpen ? 'visible' : 'hidden')};
@@ -91,9 +92,9 @@ class Menu extends Component {
             {isHome && (
               <NavList>
                 {navLinks &&
-                  navLinks.map((link, i) => (
+                  navLinks.map(({ url, name }, i) => (
                     <NavListItem key={i}>
-                      <NavLink href={link.url}>{link.name}</NavLink>
+                      <NavLink href={url}>{name}</NavLink>
                     </NavListItem>
                   ))}
               </NavList>

@@ -33,7 +33,7 @@ module.exports = {
     },
   ],
 
-  navLinks: [
+  nav: [
     {
       name: 'About',
       url: '#about',

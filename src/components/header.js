@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Link } from 'gatsby';
 import { throttle } from '../utils';
 
-import config from '../config';
+import { headerHeight } from '../config';
 import resume from '../../static/resume.pdf';
 
 import Menu from '../components/menu';
 import { IconLogo } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, media, Nav, Ol, A } from '../style';
+import { theme, mixins, media, Nav, Ol, A } from '../styles';
 
 const HeaderContainer = styled.header`
   ${mixins.flexBetween};
@@ -167,34 +168,26 @@ class Header extends Component {
     lastScrollTop: 0,
     scrollDirection: 'none',
     menuOpen: false,
-    show: false,
+    isMounted: false,
   };
 
   componentDidMount() {
+    setTimeout(() => this.setState({ isMounted: true }), 100);
+
     window.addEventListener('scroll', () => throttle(this.handleScroll()));
     window.addEventListener('resize', () => throttle(this.handleResize()));
-    window.addEventListener('keydown', evt => {
-      const { menuOpen } = this.state;
-      if (!menuOpen) {
-        return;
-      }
-      if (evt.key === 'Escape' || evt.key === 'Esc') {
-        this.toggleMenu();
-      }
-    });
-
-    setTimeout(() => this.setState({ show: true }), 100);
+    window.addEventListener('keydown', () => this.handleKeydown());
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', () => this.handleScroll());
     window.removeEventListener('resize', () => this.handleResize());
+    window.removeEventListener('keydown', () => this.handleKeydown());
   }
 
   handleScroll = () => {
     const { lastScrollTop, menuOpen, scrollDirection } = this.state;
     const fromTop = window.scrollY;
-    const headerHeight = config.headerHeight;
 
     // Make sure they scroll more than DELTA
     if (Math.abs(lastScrollTop - fromTop) <= DELTA || menuOpen) {
@@ -224,17 +217,24 @@ class Header extends Component {
     }
   };
 
-  toggleMenu = () => {
+  handleKeydown = evt => {
     const { menuOpen } = this.state;
-    this.setState({ menuOpen: !menuOpen });
-    document.body.style.overflow = `${menuOpen ? 'auto' : 'hidden'}`;
-    document.body.classList.toggle('blur');
+
+    if (!menuOpen) {
+      return;
+    }
+
+    if (evt.key === 'Escape' || evt.key === 'Esc') {
+      this.toggleMenu();
+    }
   };
+
+  toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
 
   handleMenuClick = e => {
     const target = e.target;
     const isLink = target.hasAttribute('href');
-    const isContainer = target.classList ? target.classList[0].includes('MenuContainer') : false;
+    const isContainer = target.classList && target.classList[0].includes('MenuContainer');
 
     if (isLink || isContainer) {
       this.toggleMenu();
@@ -242,15 +242,18 @@ class Header extends Component {
   };
 
   render() {
-    const { scrollDirection, menuOpen, show } = this.state;
+    const { scrollDirection, menuOpen, isMounted } = this.state;
     const { location, navLinks } = this.props;
     const isHome = location && location.pathname === '/';
 
     return (
       <HeaderContainer innerRef={el => (this.header = el)} scrollDirection={scrollDirection}>
+        <Helmet>
+          <body className={menuOpen ? 'blur' : ''} />
+        </Helmet>
         <Navbar>
           <TransitionGroup>
-            {show && (
+            {isMounted && (
               <CSSTransition classNames="fade" timeout={3000}>
                 <Logo>
                   <LogoLink to="/" aria-label="Home">
@@ -262,7 +265,7 @@ class Header extends Component {
           </TransitionGroup>
 
           <TransitionGroup>
-            {show && (
+            {isMounted && (
               <CSSTransition classNames="fade" timeout={3000}>
                 <Hamburger onClick={this.toggleMenu}>
                   <HamburgerBox>
@@ -277,12 +280,12 @@ class Header extends Component {
             {isHome && (
               <NavList>
                 <TransitionGroup>
-                  {show &&
+                  {isMounted &&
                     navLinks &&
-                    navLinks.map((link, i) => (
+                    navLinks.map(({ url, name }, i) => (
                       <CSSTransition key={i} classNames="fadedown" timeout={3000}>
                         <NavListItem key={i} style={{ transitionDelay: `${i * 100}ms` }}>
-                          <NavLink href={link.url}>{link.name}</NavLink>
+                          <NavLink href={url}>{name}</NavLink>
                         </NavListItem>
                       </CSSTransition>
                     ))}
@@ -290,7 +293,7 @@ class Header extends Component {
               </NavList>
             )}
             <TransitionGroup>
-              {show && (
+              {isMounted && (
                 <CSSTransition classNames="fadedown" timeout={3000}>
                   <ResumeButton style={{ transitionDelay: `600ms` }}>
                     <ResumeLink href={resume} target="_blank" rel="nofollow noopener noreferrer">

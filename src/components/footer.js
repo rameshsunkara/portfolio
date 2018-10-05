@@ -1,16 +1,16 @@
 import React from 'react';
 
-import config from '../config';
+import { socialMedia } from '../config';
 
 import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, media, A, P, Ul } from '../style';
+import { theme, mixins, media, A, P, Ul } from '../styles';
 
 const FooterContainer = styled.footer`
   ${mixins.flexCenter};
   flex-direction: column;
-  padding: 8px;
+  padding: 15px;
   background-color: ${theme.colors.darkNavy};
   color: ${theme.colors.slate};
   text-align: center;
@@ -38,40 +38,35 @@ const SocialLink = styled(A)`
 `;
 const Copy = styled(P)`
   margin: 5px 0 3px;
-  font-size: ${theme.fontSizes.xsmall};
 `;
 const GithubLink = styled(A)`
-  ${mixins.inlineLink};
-  padding-left: 3px;
-  color: ${theme.colors.lightGrey};
+  ${mixins.link};
+  color: ${theme.colors.slate};
   font-family: ${theme.fonts.SFMono};
-  font-size: ${theme.fontSizes.xxsmall};
-  &:after {
-    display: none;
-  }
+  font-size: ${theme.fontSizes.xsmall};
 `;
 
 const Footer = () => (
   <FooterContainer>
     <SocialContainer>
       <SocialItemList>
-        {config.socialMedia &&
-          config.socialMedia.map((social, i) => (
+        {socialMedia &&
+          socialMedia.map(({ name, url }, i) => (
             <SocialItem key={i}>
               <SocialLink
-                href={social.url}
+                href={url}
                 target="_blank"
                 rel="nofollow noopener noreferrer"
-                aria-label={social.name}>
-                {social.name === 'Github' ? (
+                aria-label={name}>
+                {name === 'Github' ? (
                   <IconGithub />
-                ) : social.name === 'Linkedin' ? (
+                ) : name === 'Linkedin' ? (
                   <IconLinkedin />
-                ) : social.name === 'Codepen' ? (
+                ) : name === 'Codepen' ? (
                   <IconCodepen />
-                ) : social.name === 'Instagram' ? (
+                ) : name === 'Instagram' ? (
                   <IconInstagram />
-                ) : social.name === 'Twitter' ? (
+                ) : name === 'Twitter' ? (
                   <IconTwitter />
                 ) : (
                   <IconGithub />
@@ -82,12 +77,11 @@ const Footer = () => (
       </SocialItemList>
     </SocialContainer>
     <Copy>
-      Built using this
       <GithubLink
-        href="https://github.com/rameshsunkara/portfolio"
+        href="https://github.com/bchiang7/v4"
         target="_blank"
         rel="nofollow noopener noreferrer">
-        fork
+        Designed &amp; Built by
       </GithubLink>
     </Copy>
   </FooterContainer>
