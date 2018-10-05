@@ -5,7 +5,7 @@ import { socialMedia } from '../config';
 import { IconGithub, IconLinkedin, IconCodepen, IconInstagram, IconTwitter } from './icons';
 
 import styled from 'styled-components';
-import { theme, mixins, media, A, P, Ul } from '../styles';
+import { theme, mixins, media, A, Ul } from '../styles';
 
 const FooterContainer = styled.footer`
   ${mixins.flexCenter};
@@ -15,7 +15,6 @@ const FooterContainer = styled.footer`
   color: ${theme.colors.slate};
   text-align: center;
   height: auto;
-  display: none;
 `;
 const SocialContainer = styled.div`
   color: ${theme.colors.lightSlate};
@@ -36,16 +35,6 @@ const SocialLink = styled(A)`
     height: 20px;
   }
 `;
-const Copy = styled(P)`
-  margin: 5px 0 3px;
-`;
-const GithubLink = styled(A)`
-  ${mixins.link};
-  color: ${theme.colors.slate};
-  font-family: ${theme.fonts.SFMono};
-  font-size: ${theme.fontSizes.xsmall};
-`;
-
 const Footer = () => (
   <FooterContainer>
     <SocialContainer>
@@ -76,14 +65,6 @@ const Footer = () => (
           ))}
       </SocialItemList>
     </SocialContainer>
-    <Copy>
-      <GithubLink
-        href="https://github.com/bchiang7/v4"
-        target="_blank"
-        rel="nofollow noopener noreferrer">
-        Designed &amp; Built by
-      </GithubLink>
-    </Copy>
   </FooterContainer>
 );
 
