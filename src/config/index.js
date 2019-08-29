@@ -25,7 +25,7 @@ module.exports = {
     },
     {
       name: 'Instagram',
-      url: 'https://www.instagram.com/viewfyndr/',
+      url: 'https://www.instagram.com/ramesh.clicks/',
     },
     {
       name: 'Twitter',
